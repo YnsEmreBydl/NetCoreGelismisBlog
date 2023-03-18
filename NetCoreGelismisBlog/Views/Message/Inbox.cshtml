@@ -1,0 +1,48 @@
+﻿@using EntityLayer.Concrete
+@model List<Message2>
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KONU</th>
+        <th>DETAY</th>
+        <th>GÖNDEREN</th>
+        <th>GÖNDERİLEN TARİH</th>
+        <th>MESAJ DURUMU</th>
+        <th>SİL</th>
+     
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.MessageID</td>
+            <td>@item.Subject</td>
+            <td>@item.MessageDetails</td>
+            <td>@item.SenderUser.WriterName</td>
+            <td>@item.MessageDate</td>
+            <td>
+                @if (item.MessageStatus)
+                {
+
+
+                    <span class="badge badge-success btn-sm">Okundu</span>
+                }
+                else
+                {
+                    <span class="badge badge-danger btn-sm">Okunmadı</span>
+                }
+            </td>
+            <td><a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-danger">Sil</a></td>
+         
+
+        </tr>
+
+    }
+</table>
+<a href="/Blog/BlogAdd/" class="btn btn-primary">Yeni Mesaj Oluştur</a>
+

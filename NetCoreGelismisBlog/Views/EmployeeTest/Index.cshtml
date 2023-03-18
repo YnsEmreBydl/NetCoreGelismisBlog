@@ -1,0 +1,29 @@
+﻿@using NetCoreGelismisBlog.Controllers
+@model List<EmployeeTest.Class1>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>AD SOYAD</th>
+        <th>DÜZENLE</th>
+        <th>SİL</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmployeeID</td>
+            <td>@item.EmployeName</td>
+            <td><a href="/EmployeeTest/EditEmployee/@item.EmployeeID" class="btn btn-warning btn-sm">Düzenle</a></td>
+            <td><a href="" class="btn btn-danger btn-sm">Sil</a></td>
+          
+        </tr>
+    }
+</table>
+
+<a href="/EmployeeTest/AddEpmloyee/" class="btn btn-outline-primary btn-sm">Yeni Müşteri Ekle</a>
+

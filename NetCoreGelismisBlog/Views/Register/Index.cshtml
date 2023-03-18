@@ -1,0 +1,55 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">Kayıt Ol</h3>
+        <div class="inner-sec">
+            <div class="login p-5 bg-light mx-auto mw-100">
+                @using(Html.BeginForm("Index","Register", FormMethod.Post))
+                {
+
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom01">Ad Soyad</label>
+
+                        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.WriterName)
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom02">Mail</label>
+                        @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.WriterMail)
+                    </div>
+
+
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom02">Şifre</label>
+                        @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.WriterPassword)
+                    </div>
+
+                
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom02">Resim</label>
+                        @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.WriterImage)
+                    </div>
+                </div>
+
+                    <button type="submit" class="btn btn-primary submit mb-4">Kayıt Ol</button>
+                    <p>
+                        <a href="#">Tüm şartları okudum, kabul ediyorum.</a>
+                    </p>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+

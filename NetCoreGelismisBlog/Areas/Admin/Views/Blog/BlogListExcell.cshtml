@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "BlogListExcell";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<a href="/Admin/Blog/ExcelBlogList" onclick="downloadwxcell" class="btn btn-primary btn-sm">Excell Olarak İndir</a>
+<script>
+    function downloadwxcell() {
+        window.open("/Admin/Blog/ExcelBlogList");
+    }
+</script>

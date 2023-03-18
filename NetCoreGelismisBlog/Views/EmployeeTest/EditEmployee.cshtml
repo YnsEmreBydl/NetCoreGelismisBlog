@@ -1,0 +1,17 @@
+﻿@model NetCoreGelismisBlog.Controllers.EmployeeTest.Class1
+@{
+    ViewData["Title"] = "EditEmployee";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form method="post">
+
+    <label>ID</label>
+    @Html.TextBoxFor(x => x.EmployeeID, new { @class = "form-control" })
+
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.EmployeName, new { @class = "form-control" })
+<br />
+<button class="btn btn-warning btn-sm">Güncelle</button>
+</form>
+

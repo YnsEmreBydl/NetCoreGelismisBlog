@@ -1,0 +1,12 @@
+﻿@model NetCoreGelismisBlog.Controllers.EmployeeTest.Class1
+@{
+    ViewData["Title"] = "AddEpmloyee";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Ad Soyad</label>
+    <input type="text" asp-for="@Model.EmployeName"  class="form-control"/> <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>
+
